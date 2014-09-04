@@ -1,5 +1,5 @@
 <?php
-namespace MJanssen\Service;
+namespace MRadossi\Service;
 
 use JMS\Serializer\Serializer;
 

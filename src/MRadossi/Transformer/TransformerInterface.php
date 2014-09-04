@@ -1,5 +1,5 @@
 <?php
-namespace MJanssen\Transformer;
+namespace MRadossi\Transformer;
 
 use Silex\Application;
 

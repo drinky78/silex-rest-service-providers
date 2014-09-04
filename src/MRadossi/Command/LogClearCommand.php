@@ -1,5 +1,5 @@
 <?php
-namespace MJanssen\Command;
+namespace MRadossi\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;

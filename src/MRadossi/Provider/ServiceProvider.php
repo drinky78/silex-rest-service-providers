@@ -1,23 +1,23 @@
 <?php
-namespace MJanssen\Provider;
+namespace MRadossi\Provider;
 
 use JMS\Serializer\Construction\DoctrineObjectConstructor;
 use JMS\Serializer\Construction\UnserializeObjectConstructor;
 use JMS\Serializer\Handler\HandlerRegistry;
 use JMS\Serializer\SerializerBuilder;
-use MJanssen\Service\ExtractorService;
-use MJanssen\Service\HydratorService;
-use MJanssen\Service\RequestFilterService;
-use MJanssen\Service\ResolverService;
-use MJanssen\Service\RestEntityService;
-use MJanssen\Service\TransformerService;
-use MJanssen\Service\ValidatorService;
+use MRadossi\Service\ExtractorService;
+use MRadossi\Service\HydratorService;
+use MRadossi\Service\RequestFilterService;
+use MRadossi\Service\ResolverService;
+use MRadossi\Service\RestEntityService;
+use MRadossi\Service\TransformerService;
+use MRadossi\Service\ValidatorService;
 use Silex\Application;
 use Silex\ServiceProviderInterface;
 
 /**
  * Class ServiceProvider
- * @package MJanssen\Provider
+ * @package MRadossi\Provider
  */
 class ServiceProvider implements ServiceProviderInterface
 {

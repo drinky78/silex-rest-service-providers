@@ -1,5 +1,5 @@
 <?php
-namespace MJanssen\Controller;
+namespace MRadossi\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,7 +9,7 @@ use RuntimeException;
 
 /**
  * Class RestController
- * @package MJanssen\Controller
+ * @package MRadossi\Controller
  */
 abstract class RestController
 {

@@ -1,5 +1,5 @@
 <?php
-namespace MJanssen\Service;
+namespace MRadossi\Service;
 
 use Spray\PersistenceBundle\Repository\RepositoryFilter;
 use Spray\PersistenceBundle\Repository\RepositoryFilterInterface;

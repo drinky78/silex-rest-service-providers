@@ -1,5 +1,5 @@
 <?php
-namespace MJanssen\Service;
+namespace MRadossi\Service;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
