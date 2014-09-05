@@ -1,5 +1,5 @@
 {
-    "name": "marcojanssen/silex-rest-service-providers",
+    "name": "drinky78/silex-rest-service-providers",
     "description": "Package containing several services for marcojanssen/silex-rest skeleton",
     "keywords": ["silex", "rest", "api", "provider"],
     "license": "MIT",
@@ -7,6 +7,10 @@
         {
             "name": "Marco Janssen",
             "email": "dev@marcojanssen.net"
+        },
+        {
+            "name": "Marco Radossi",
+            "email": "marco.radossi@gmail.com"
         }
     ],
     "require": {
@@ -33,7 +37,7 @@
     },
     "autoload": {
         "psr-0": {
-            "MJanssen\\": "src/"
+            "MRadossi\\": "src/"
         }
     }
 }
