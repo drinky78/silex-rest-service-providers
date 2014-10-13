@@ -49,11 +49,13 @@ class RestEntityService
         );
     }
 
+
     /**
      * @return array
      */
     public function getCollectionAction()
     {
+        /*
         $repository = $this->app['service.request.filter']->filter(
             $this->getEntityRepository()
         );
@@ -80,9 +82,87 @@ class RestEntityService
                 'limit' => $limit,
                 'total' => $repository->count()
             )
+        );//*/
+        $repository = $this->getEntityRepository();
+
+        $page = $this->request->query->get('page');
+        if(null === $page) {
+            $page = 1;
+        }
+
+        $limit = $this->request->query->get('limit');
+        if(null === $limit || !is_numeric($limit)) {
+            $limit = 20;
+        }
+
+        $data = $repository->findBy(array(), array(), $limit, ($page-1)*$limit);
+        
+        return array(
+            'data' => $this->app['doctrine.extractor']->extractEntities(
+                $data,
+                'list'
+            ),
+            'pagination' => array(
+                'page' => $page,
+                'limit' => $limit,
+                'total' => count($data)
+            )
         );
     }
 
+    /**
+     * @return array
+     */
+    public function getLinkedCollectionAction($id)
+    {
+        $fk = $this->request->attributes->get('fk');
+        
+        /*
+        $repository = $this->app['service.request.filter']->filter(
+            $repository = $this->getEntityRepository()
+        );
+        */
+        $repository = $this->getEntityRepository();
+
+        $page = $this->request->query->get('page');
+        if(null === $page) {
+            $page = 1;
+        }
+
+        $limit = $this->request->query->get('limit');
+        if(null === $limit || !is_numeric($limit)) {
+            $limit = 20;
+        }
+
+        $criteria = array($fk => $id);
+        return array(
+            'data' => $this->app['doctrine.extractor']->extractEntities(
+                $repository->findBy($criteria, array(), $limit, ($page-1)*$limit),
+                'list'
+            ),
+            'pagination' => array(
+                'page' => $page,
+                'limit' => $limit,
+                'total' => $repository->count()
+            )
+        );
+/*
+        $repository = $repository->paginate($page, $limit);
+        
+        return array(
+            'data' => $this->app['doctrine.extractor']->extractEntities(
+                $repository,
+                'list'
+            ),
+            'pagination' => array(
+                'page' => $page,
+                'limit' => $limit,
+                'total' => $repository->count()
+            )
+        );
+*/
+    }
+    
     /**
      * @param $identifier
      * @return array

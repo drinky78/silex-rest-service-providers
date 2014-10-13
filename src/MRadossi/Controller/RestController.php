@@ -87,6 +87,15 @@ abstract class RestController
         return $app['service.rest.entity']->getCollectionAction();
     }
 
+    /**
+     * @param Request $request
+     * @param Application $app
+     * @return mixed
+     */
+    protected function getLinkedCollection(Application $app, $id)
+    {
+        return $app['service.rest.entity']->getLinkedCollectionAction($id);
+    }
 
     /**
      * @param Request $request
